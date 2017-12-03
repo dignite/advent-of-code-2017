@@ -1,0 +1,16 @@
+{
+  "name": "advent-of-code-1",
+  "version": "1.0.0",
+  "description": "--- Day 1: Inverse Captcha ---",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch --notify"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "jest": "^21.2.1",
+    "standard": "^10.0.3"
+  }
+}
