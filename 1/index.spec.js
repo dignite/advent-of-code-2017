@@ -1,5 +1,11 @@
 import algorithm from './index'
 
+/* eslint
+  fp/no-nil: "off",
+  better/explicit-return: "off",
+  fp/no-unused-expression: "off"
+*/
+
 describe('inverse captcha', () => {
   it('1122 produces a sum of 3 (1 + 2) because the first digit (1) matches the second digit and the third digit (2) matches the fourth digit.', () => {
     const input = '1122'
