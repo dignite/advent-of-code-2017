@@ -1,22 +1,8 @@
-import fp from 'lodash/fp'
+import { chunk, zipWith, sum } from 'lodash/fp'
 
 export default function algorithm (numbers) {
   const parsed = numbers.split('').map(numberString => parseInt(numberString, 10))
-  return fp.reduce(sumUpMatchingSequences)(getMatchingSequenceIdentity(parsed))(parsed).sum
-}
-
-function sumUpMatchingSequences (previous, currentNumber) {
-  const matchesLastNumber = currentNumber === previous.previousNumber
-  const addition = matchesLastNumber ? currentNumber : 0
-  return {
-    sum: previous.sum + addition,
-    previousNumber: currentNumber
-  }
-}
-
-function getMatchingSequenceIdentity (numbers) {
-  return {
-    sum: 0,
-    previousNumber: numbers[numbers.length - 1]
-  }
+  const halved = chunk(parsed.length / 2)(parsed)
+  const duplicationValues = zipWith((a, b) => a === b ? 2 * a : 0)(halved[0])(halved[1])
+  return sum(duplicationValues)
 }

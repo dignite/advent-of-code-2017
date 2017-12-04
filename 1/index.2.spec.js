@@ -22,7 +22,7 @@ describe('inverse captcha part 2', () => {
     expect(output).toEqual(0)
   })
   it('123425 produces 4, because both 2s match each other, but no other digit has a match.', () => {
-    const input = '12345'
+    const input = '123425'
 
     const output = algorithm(input)
 
