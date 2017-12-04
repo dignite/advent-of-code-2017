@@ -1,4 +1,4 @@
-import algorithm from './index'
+import algorithm, { toPosition, getRing } from './index'
 
 /* eslint
   fp/no-nil: "off",
@@ -6,7 +6,21 @@ import algorithm from './index'
   fp/no-unused-expression: "off"
 */
 
-describe('corruption checksum', () => {
+const test = implementation => inputPrefix => input => output => {  
+  it(`${inputPrefix}${input} => ${output}`, () => {
+    expect(implementation(input)).toEqual(output)
+  })
+}
+
+describe('spiral memory', () => {
+  const spiralMemoryTest = test(algorithm)('Position ')
+  spiralMemoryTest(1)(0)
+  spiralMemoryTest(2)(1)
+  spiralMemoryTest(11)(2)
+  spiralMemoryTest(12)(3)
+  spiralMemoryTest(23)(2)
+  spiralMemoryTest(1024)(31)
+
   it("Data from square 1 is carried 0 steps, since it's at the access port.", () => {
     const input = 1
 
@@ -42,4 +56,35 @@ describe('corruption checksum', () => {
 
     expect(output).toMatchSnapshot()
   })
+})
+
+describe('getRing', () => {
+  const ringTest = test(getRing)('Position ')
+  
+  ringTest(1)(0)
+  ringTest(2)(1)
+  ringTest(3)(1)
+  ringTest(4)(1)
+  ringTest(5)(1)
+  ringTest(6)(1)
+  ringTest(7)(1)
+  ringTest(8)(1)
+  ringTest(9)(1)
+  ringTest(10)(2)
+  ringTest(11)(2)
+  ringTest(12)(2)
+  ringTest(13)(2)
+  ringTest(14)(2)
+  ringTest(15)(2)
+  ringTest(16)(2)
+  ringTest(17)(2)
+  ringTest(18)(2)
+  ringTest(19)(2)
+  ringTest(20)(2)
+  ringTest(21)(2)
+  ringTest(22)(2)
+  ringTest(23)(2)
+  ringTest(24)(2)
+  ringTest(25)(2)
+  ringTest(26)(3)
 })

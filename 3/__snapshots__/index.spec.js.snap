@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`corruption checksum How many steps are required to carry the data from the square identified in your puzzle input all the way to the access port? 1`] = `-1`;
+exports[`spiral memory How many steps are required to carry the data from the square identified in your puzzle input all the way to the access port? 1`] = `430`;
