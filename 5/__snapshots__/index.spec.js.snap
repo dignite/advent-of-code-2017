@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`high-entropy passphrases How many passphrases are valid? 1`] = `466`;
